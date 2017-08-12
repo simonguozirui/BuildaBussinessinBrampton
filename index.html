@@ -32,7 +32,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        
+
       </ul>
       
       <form class="navbar-form navbar-left">
@@ -56,20 +56,35 @@
 </nav>
 <script>
 require([
-  "esri/Map",
-  "esri/views/MapView",
-  "dojo/domReady!"
-], function(Map, MapView){
-  var map = new Map({
-    basemap: "streets"
-  });
-  var view = new MapView({
-    container: "viewDiv",  // Reference to the scene div created in step 5
-    map: map,  // Reference to the map object created before the scene
-    zoom: 10,  // Sets zoom level based on level of detail (LOD)
-    center: [-79.76, 43.68]  // Sets center point of view using longitude,latitude
-  });
-});
+      "esri/views/MapView",
+      "esri/WebMap",
+      "dojo/domReady!"
+    ], function(
+      MapView, WebMap
+    ) {
+
+      /************************************************************
+       * Creates a new WebMap instance. A WebMap must reference
+       * a PortalItem ID that represents a WebMap saved to
+       * arcgis.com or an on-premise portal.
+       *
+       * To load a WebMap from an on-premise portal, set the portal
+       * url with esriConfig.portalUrl.
+       ************************************************************/
+      var webmap = new WebMap({
+        portalItem: { // autocasts as new PortalItem()
+          id: "80dca36264464d9da434c9b1d474a882"
+        }
+      });
+
+      /************************************************************
+       * Set the WebMap instance to the map property in a MapView.
+       ************************************************************/
+      var view = new MapView({
+        map: webmap,
+        container: "viewDiv"
+      });
+    });
 </script>
 </head>
 <body>
