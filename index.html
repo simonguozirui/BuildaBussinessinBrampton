@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Build A Business In Brampton</title>
+<style>
+  html, body, #viewDiv {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+</style>
+<link rel="stylesheet" href="https://js.arcgis.com/4.4/esri/css/main.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<script src="https://js.arcgis.com/4.4/"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+
+
+
+<script>
+require([
+  "esri/Map",
+  "esri/views/MapView",
+  "dojo/domReady!"
+], function(Map, MapView){
+  var map = new Map({
+    basemap: "streets"
+  });
+  var view = new MapView({
+    container: "viewDiv",  // Reference to the scene div created in step 5
+    map: map,  // Reference to the map object created before the scene
+    zoom: 10,  // Sets zoom level based on level of detail (LOD)
+    center: [-79.76, 43.68]  // Sets center point of view using longitude,latitude
+  });
+});
+</script>
+</head>
+<body>
+
+  <script>
+  require([
+    "esri/Map",
+    "esri/views/MapView",
+    "dojo/domReady!"
+  ], function(Map, MapView){
+    var map = new Map({
+      basemap: "streets"
+    });
+    var view = new MapView({
+      container: "viewDiv",  // Reference to the scene div created in step 5
+      map: map,  // Reference to the map object created before the scene
+      zoom: 10,  // Sets zoom level based on level of detail (LOD)
+      center: [-79.76, 43.68]  // Sets center point of view using longitude,latitude
+    });
+  });
+  </script>
+  <!-- <div class="container">
+    <div class="row"><h2>Hello</h2></div>
+    <div class="row">
+      <div class="col-3">
+        <h2>Hello</h2>
+      </div>
+      <div class="col-9"> -->
+        <div id="viewDiv"></div>
+      <!-- </div>
+    </div>
+  </div> -->
+</body>
+</html>
