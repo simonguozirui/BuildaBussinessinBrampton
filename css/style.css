@@ -27,7 +27,6 @@ html, body {
   height: 100px;
 }
 
-.form {
-    width: 300px;
-    height: 100px;
+.jumbotron {
+     background-color: #C3E4ED
 }
