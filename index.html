@@ -82,7 +82,9 @@ require([
        ************************************************************/
       var view = new MapView({
         map: webmap,
-        container: "viewDiv"
+        container: "viewDiv",
+        zoom: 10,  // Sets zoom level based on level of detail (LOD)
+        center: [-79.76667 , 43.683334]  // Sets center point of view using longitude,latitude
       });
     });
 </script>
