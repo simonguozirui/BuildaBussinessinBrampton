@@ -5,49 +5,29 @@
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Build A Business In Brampton</title>
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-<link rel="stylesheet" href="https://js.arcgis.com/4.4/esri/css/main.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
-<script src="https://js.arcgis.com/4.4/"></script>
 <script src="js/jquery.min.js"></script>
+
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 
-
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 <script>
-require([
-      "esri/views/MapView",
-      "esri/WebMap",
-      "dojo/domReady!"
-    ], function(
-      MapView, WebMap
-    ) {
-
-      /************************************************************
-       * Creates a new WebMap instance. A WebMap must reference
-       * a PortalItem ID that represents a WebMap saved to
-       * arcgis.com or an on-premise portal.
-       *
-       * To load a WebMap from an on-premise portal, set the portal
-       * url with esriConfig.portalUrl.
-       ************************************************************/
-      var webmap = new WebMap({
-        portalItem: { // autocasts as new PortalItem()
-          id: "80dca36264464d9da434c9b1d474a882"
-        }
-      });
-
-      /************************************************************
-       * Set the WebMap instance to the map property in a MapView.
-       ************************************************************/
-      var view = new MapView({
-        map: webmap,
-        container: "viewDiv"
-      });
-    });
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAOW1MRi6n0sSl6HkAZBMHoa5qYBTYPOAk",
+    authDomain: "buildabussinessinbrampton.firebaseapp.com",
+    databaseURL: "https://buildabussinessinbrampton.firebaseio.com",
+    projectId: "buildabussinessinbrampton",
+    storageBucket: "buildabussinessinbrampton.appspot.com",
+    messagingSenderId: "981967861341"
+  };
+  firebase.initializeApp(config);
 </script>
+
 </head>
 <body>
   <!-- <div class="container">
