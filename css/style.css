@@ -28,5 +28,8 @@ html, body {
 }
 
 .jumbotron {
-     background-color: #C3E4ED
+     background-color: #C3E4ED;
+    background-size: cover;
+    margin-bottom: 0;
 }
+
