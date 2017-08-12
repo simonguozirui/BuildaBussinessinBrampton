@@ -44,7 +44,7 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
-        
+
       <ul class="nav navbar-nav navbar-right">
         <li><a href="infoform.html">Rent a Space</a></li>
       </ul>
@@ -55,10 +55,10 @@
 require([
       "esri/views/MapView",
       "esri/WebMap",
-      "esri/layers/TileLayer",  // Require the TileLayer module
+      "esri/widgets/LayerList",
       "dojo/domReady!"
     ], function(
-      MapView, WebMap, TileLayer
+      MapView, WebMap, LayerList
     ) {
 
       /************************************************************
@@ -82,7 +82,19 @@ require([
         map: webmap,
         container: "viewDiv",
         zoom: 10,  // Sets zoom level based on level of detail (LOD)
-        center: [-79.76667 , 43.683334]  // Sets center point of view using longitude,latitude
+        center: [-79.76667 , 43.683334], // Sets center point of view using longitude,latitude,
+        padding: {
+          right: 320 // Same value as the #sidebar width in CSS
+        }
+      });
+
+      view.then(function() {
+        var layerList = new LayerList({
+          view: view
+        });
+
+        // Add widget to the top right corner of the view
+        view.ui.add(layerList, "top-right");
       });
     });
 </script>
@@ -95,7 +107,11 @@ require([
         <h2>Hello</h2>
       </div>
       <div class="col-9"> -->
-        <div id="viewDiv"></div>
+        <div id="viewDiv">
+          <div id="sidebar">
+        </div>
+        </div>
+
       <!-- </div>
     </div>
   </div> -->
