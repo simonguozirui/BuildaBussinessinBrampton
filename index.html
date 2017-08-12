@@ -56,6 +56,7 @@ require([
       "esri/views/MapView",
       "esri/WebMap",
       "esri/widgets/LayerList",
+      "esri/widgets/Legend",
       "dojo/domReady!"
     ], function(
       MapView, WebMap, LayerList
@@ -93,9 +94,24 @@ require([
           view: view
         });
 
+      //   var featureLayer = webmap.layers.getItemAt(0);
+       //
+      //  var legend = new Legend({
+      //    view: view,
+      //    layerInfos: [{
+      //      layer: featureLayer,
+      //      title: "Brampton Business Development Environment"
+      //    }]
+      //  });
+
         // Add widget to the top right corner of the view
         view.ui.add(layerList, "top-right");
+        // Add widget to the bottom right corner of the view
+        // view.ui.add(legend, "bottom-right");
+
       });
+
+
     });
 </script>
 </head>

@@ -1,3 +1,4 @@
-X,Y,Street Number,Street Name,Space in sqft,Price / Month,Contact Person,Contact Info
--79.73,43.66,2,COUNTY CT BLVD,2000,186,Chris Allen ,
--79.70,43.74,125,Chrysler Drive,2100,5775,Elvie Antonacci,
+﻿"|","|__contact","|__contactNum","|__lat","|__lon","|__price","|__space","|__streetName","|__streetNum"
+"-KrNL2gGtTBXsKZjWJy8","Chris Allen","","43.66","-79.73","2000","5580","COUNTY CT BLVD","2"
+"-KrNOx9t_nYC2OHGjqMe","Elvie Antonacci","","43.74","-79.7","5775","2100","Chrysler Drive","2"
+"-KrNPw4IxwV5sp82SgKL","Jas Grewal","","43.73","-79.77","3929","1210","Wanless Drive","230"

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Create a Profile</title>
+<title>Building your Profile</title>
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 <link rel="stylesheet" href="https://js.arcgis.com/4.4/esri/css/main.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -27,62 +27,15 @@
   };
   firebase.initializeApp(config);
 
-    $(function(){
-    //just make a variable to keep track of the data coming from Firebase
-    var data =[];
-    
-    //create a new connection to firebase
-    var ref = new Firebase('https://seneca-activs.firebaseio.com/activities');
-
-    //listen to data updates from firebase
-    ref.on("value", function(snapshot){
-      console.log(snapshot.val() );
-      //when data updates at Firebase, put it in the data variable
-      data = snapshot.val();
-    })
-
-
-
-    $('#newActivity').submit(function(event){
-      var $form = $(this);
-      console.log("submit to Firebase");
-
-      //make the submit disabled
-      $form.find("#saveForm").prop('disabled', true);
-
-      //get the actual values that we will send to firebase
-      var titleToSend = $('#activityTitle').val();
-
-      console.log(titleToSend);
-
-      var descriptionToSend = $('#activityDescription').val();
-
-      console.log(descriptionToSend);
-
-      var categoryToSend = $('#activityCatagory').val();
-
-      console.log(categoryToSend);
-
-      //take the values from the form, and put them in an object
-      var newActivity = {
-        "description": descriptionToSend,
-        "title":titleToSend,
-        "type": categoryToSend
-      }
-      //put the new object into the data array
-      data.push(newActivity);
-      console.log(data);
-      //send the new data to Firebase
-  		ref.set(data);
-
-      return false;
-    })
-  })
 </script>
-
+<style>
+    body{
+        background-color: #C3E4ED
+    }
+</style>
 </head>
 <body>
-<div class="jumbotron" vertical-center>
+
 <div class="container">
 
         <div class="row" style="width: 100%">
@@ -102,7 +55,7 @@
                                     <input type="text" class="form-control" id="formStreetName" placeholder="Street Name">
                             </div>
                             <div class="form-group">
-                                <label for="formSpace">Space (square feet)</label>
+                                <label for="formSpace">Space (meters squared)</label>
                                     <input type="text" class="form-control" id="formSpace" placeholder="Space">
                             </div>
                              <div class="form-group">
@@ -136,8 +89,12 @@
             </div>
         </div>
     </div>
-    
-    </div>
+    <style>
+        div class="container" {
+            width: 300px;
+            height: 100px;
+        }
+    </style>
 
 
 </body>
